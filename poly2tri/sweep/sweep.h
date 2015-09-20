@@ -39,6 +39,7 @@
 #ifndef SWEEP_H
 #define SWEEP_H
 
+#include "../common/config.h"
 #include <vector>
 
 namespace p2t {
@@ -49,7 +50,7 @@ struct Point;
 struct Edge;
 class Triangle;
 
-class Sweep
+class KAKA_EXPORT Sweep
 {
 public:
 

@@ -32,6 +32,7 @@
 #ifndef SWEEP_CONTEXT_H
 #define SWEEP_CONTEXT_H
 
+#include "../common/config.h"
 #include <list>
 #include <vector>
 #include <cstddef>
@@ -48,7 +49,7 @@ struct Node;
 struct Edge;
 class AdvancingFront;
 
-class SweepContext {
+class KAKA_EXPORT SweepContext {
 public:
 
 /// Constructor

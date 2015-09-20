@@ -33,6 +33,7 @@
 #define ADVANCED_FRONT_H
 
 #include "../common/shapes.h"
+#include "../common/config.h"
 
 namespace p2t {
 
@@ -59,7 +60,7 @@ struct Node {
 };
 
 // Advancing front
-class AdvancingFront {
+class KAKA_EXPORT AdvancingFront {
 public:
 
 AdvancingFront(Node& head, Node& tail);

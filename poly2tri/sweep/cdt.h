@@ -35,6 +35,7 @@
 #include "advancing_front.h"
 #include "sweep_context.h"
 #include "sweep.h"
+#include "../common/config.h"
 
 /**
  *
@@ -44,7 +45,7 @@
 
 namespace p2t {
 
-class CDT
+class KAKA_EXPORT CDT
 {
 public:
 

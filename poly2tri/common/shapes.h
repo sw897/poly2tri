@@ -33,6 +33,8 @@
 #ifndef SHAPES_H
 #define SHAPES_H
 
+#include "config.h"
+
 #include <vector>
 #include <cstddef>
 #include <assert.h>
@@ -147,7 +149,7 @@ struct Edge {
 // Triangle-based data structures are know to have better performance than quad-edge structures
 // See: J. Shewchuk, "Triangle: Engineering a 2D Quality Mesh Generator and Delaunay Triangulator"
 //      "Triangulations in CGAL"
-class Triangle {
+class KAKA_EXPORT Triangle {
 public:
 
 /// Constructor

@@ -122,6 +122,6 @@ bool InScanArea(const Point& pa, const Point& pb, const Point& pc, const Point& 
   return true;
 }
 
-}
+}   // namespace p2t
 
 #endif
