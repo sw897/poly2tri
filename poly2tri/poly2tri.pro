@@ -28,7 +28,7 @@ HEADERS += poly2tri.h \
     sweep/sweep.h \
     sweep/sweep_context.h \
     common/config.h \
-    common/random_utils.h
+    common/triangle_utils.h
 
 unix {
     target.path = /usr/lib

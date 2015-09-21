@@ -2,9 +2,9 @@
 #ifndef RANDOM_UTILS_H
 #define RANDOM_UTILS_H
 
+#include "shapes.h"
 #include <math.h>
 #include <time.h>
-#include <fstream>
 #include <iostream>
 
 namespace p2t {
@@ -43,12 +43,8 @@ double random(double (*fun)(double), double xmin = 0, double xmax = 1)
 }
 
 
-void random_points_in_triangle(double x1, double y1, double x2, double y2, double x3, double y3, long long num, std::string output = "out.csv")
+void random_points_in_triangle(double x1, double y1, double x2, double y2, double x3, double y3, long long num)
 {
-    std::streambuf* coutBuf = std::cout.rdbuf();
-    std::ofstream of(output);
-    std::streambuf* fileBuf = of.rdbuf();
-    std::cout.rdbuf(fileBuf);
     for (long long it = 0; it < num; ++it)
     {
         double x = random(NULL);
@@ -63,14 +59,27 @@ void random_points_in_triangle(double x1, double y1, double x2, double y2, doubl
         double p2 = (y2-y1)*x + (y3-y1)*y + y1;
         std::cout << p1 << "," << p2 << std::endl;
     }
-    of.flush();
-    of.close();
-    std::cout.rdbuf(coutBuf);
 }
 
 double triangle_area(double x1, double y1, double x2, double y2, double x3, double y3)
 {
     return (x1*y2 + x2*y3 + x3*y1 - x3*y2 - x2*y1 - x1*y3)/2.;
+}
+
+double triangle_area(Triangle& tri)
+{
+    Point& a = *tri.GetPoint(0);
+    Point& b = *tri.GetPoint(1);
+    Point& c = *tri.GetPoint(2);
+    return triangle_area(a.x, a.y, b.x, b.y, c.x, c.y);
+}
+
+void random_points_in_triangle(Triangle& tri, long long num)
+{
+    Point& a = *tri.GetPoint(0);
+    Point& b = *tri.GetPoint(1);
+    Point& c = *tri.GetPoint(2);
+    random_points_in_triangle(a.x, a.y, b.x, b.y, c.x, c.y, num);
 }
 
 }   // namespace p2t
