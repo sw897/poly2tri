@@ -1,6 +1,3 @@
-.DS_Store
-.lock-wafbuild
-.waf-*
 build*/
 poly2tri/lib/
 *.user
